@@ -1,0 +1,26 @@
+{
+  "arrowParens": "always",
+  "bracketSameLine": false,
+  "bracketSpacing": true,
+  "cssDeclarationSorterOrder": "smacss",
+  "endOfLine": "lf",
+  "jsonRecursiveSort": false,
+  "jsonSortOrder": "{\"*\": \"lexical\"}",
+  "jsxSingleQuote": false,
+  "overrides": [
+    {
+      "files": ["*.code-snippets", "*.manifest", "*.webmanifest"],
+      "options": {
+        "parser": "json"
+      }
+    }
+  ],
+  "plugins": ["prettier-plugin-css-order", "prettier-plugin-sort-json"],
+  "printWidth": 110,
+  "quoteProps": "consistent",
+  "semi": true,
+  "singleQuote": true,
+  "tabWidth": 2,
+  "trailingComma": "es5",
+  "useTabs": false
+}
