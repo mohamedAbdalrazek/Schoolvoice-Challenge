@@ -1,0 +1,50 @@
+// schoolInfo.module.scss
+
+.schoolInfo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 20px;
+    gap: 20px;
+    color: var(--light-color);
+    animation: fadeInFromTop 0.6s ease forwards;
+    transition: all 0.3s ease;
+    @media screen and (max-width: 480px) {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+    .logoWrapper {
+        .schoolLogo {
+            width: 70px;
+            @media screen and (max-width: 480px) {
+                width: 80px;
+            }
+        }
+    }
+    .title {
+        font-weight: 500;
+        font-size: 1.3rem;
+        @media screen and (max-width: 480px) {
+            font-size: 1.3rem;
+        }
+    }
+    .schoolName {
+        font-weight: 600;
+        font-size: 2rem;
+
+        @media screen and (max-width: 480px) {
+            font-size: 1.6rem;
+        }
+    }
+}
+@keyframes fadeInFromTop {
+    from {
+        translate: 0 -100px;
+        opacity: 0;
+    }
+    to {
+        translate: 0 0;
+        opacity: 1;
+    }
+}

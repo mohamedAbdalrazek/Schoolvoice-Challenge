@@ -1,0 +1,34 @@
+
+:root {
+    --background-color: #0080ff;
+    --light-color: #fff;
+    --secondary-light-color: #a1a1a1;
+    --dark-color: #000;
+    --yellow: #fbca2c;
+    --red: #ea3a37;
+    --green: #03760f;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+
+    &:lang(en) {
+        font-family: 'Poppins', sans-serif;
+    }
+
+    &:lang(ar) {
+        font-family: 'IBM Plex Sans Arabic', sans-serif;
+    }
+}
+
+.container {
+    width: 1200px;
+    max-width: 100%;
+    margin: 0 auto;
+}

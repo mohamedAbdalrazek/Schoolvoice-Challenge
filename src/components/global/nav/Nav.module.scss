@@ -1,0 +1,23 @@
+// navbar.module.scss
+
+.nav {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.8rem 2rem;
+
+    @media screen and (max-width: 768px) {
+        padding: 1.5rem 1rem;
+    }
+    .logoWrapper {
+        height: 40px;
+        .logo {
+            height: 100%;
+        }
+
+        @media screen and (max-width: 480px) {
+            height: 35px;
+        }
+    }
+}

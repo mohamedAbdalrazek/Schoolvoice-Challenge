@@ -1,0 +1,26 @@
+{
+    "leaderboard": {
+        "en": "Leaderboard",
+        "ar": "لوحة المتصدرين"
+    },
+    "first place": {
+        "en": "First Place",
+        "ar": "المركز الأول"
+    },
+    "second place": {
+        "en": "Second Place",
+        "ar": "المركز الثاني"
+    },
+    "third place": {
+        "en": "Third Place",
+        "ar": "المركز الثالث"
+    },
+    "grade": {
+        "en": "Grade",
+        "ar": "المرحلة"
+    },
+    "section": {
+        "en": "Section",
+        "ar": "الشعبة"
+    }
+}
