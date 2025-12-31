@@ -36,3 +36,9 @@ export type GetLeaderboardDataQuery = {
         school: School;
     };
 };
+
+export type LanguageData = {
+    code: "en" | "ar";
+    name: string;
+    flag: string;
+}

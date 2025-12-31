@@ -4,9 +4,41 @@ import type { Student } from "../../../utils/types"
 import styles from "./StudentsList.module.scss"
 import useObserver from "../../../hooks/useObserver"
 import { useLanguage } from "../../../hooks/useLanguage"
-
-export const StudentsList = ({ students }: { students: Student[] }) => {
+const StudentInfo = ({imageUrl, name}:{imageUrl:string|null, name:{en:string, ar:string}}) => {
     const { language } = useLanguage()
+
+    return (
+        <div className={styles.studentInfo}>
+            <div className={styles.profileWrapper}>
+                {imageUrl ? (
+                    <img
+                        className={styles.studentImage}
+                        src={imageUrl}
+                        alt={`${name[language]} profile picture`}
+                        loading="lazy"
+                    />
+                ) : (
+                    //Get the first letters of their name if they don't have an image
+                    <div className={styles.profilePlaceholder}>
+                        {getInitials(name.en)}
+                    </div>
+                )}
+                <span className={styles.studentName}>
+                    {name[language]}
+                </span>
+            </div>
+        </div>
+    )
+}
+const Wrapper = ({ value, className }: { value: string | number, className: string }) => {
+    return (
+
+        <div className={className}>
+            <span >{value}</span>
+        </div>
+    )
+}
+export const StudentsList = ({ students }: { students: Student[] }) => {
 
     //useObserver for triggering an animation when scrolling to the component
     const { refs } = useObserver(students, styles)
@@ -17,49 +49,13 @@ export const StudentsList = ({ students }: { students: Student[] }) => {
                     refs.current[index] = el
                 }} // ref for on scroll animation 
                 >
-                    <div className={styles.rankWrapper}>
-                        {/*The first three was already shown so we need to skip three positions*/}
-                        <span className={styles.rankBadge}>{index + 4}</span>
-                    </div>
+                    {/*The first three was already shown so we need to skip three positions*/}
+                    <Wrapper className={styles.rankWrapper} value={index + 4} />
 
-                    <div className={styles.studentInfo}>
-                        <div className={styles.profileWrapper}>
-                            {student.studentImage ? (
-                                <img
-                                    className={styles.studentImage}
-                                    src={student.studentImage}
-                                    alt={`${student.name[language]} profile picture`}
-
-                                />
-                            ) : (
-                                //Get the first letters of their name if they don't have an image
-                                <div className={styles.profilePlaceholder}>
-                                    {getInitials(student.name.en)}
-                                </div>
-                            )}
-                            <span className={styles.studentName}>
-                                {student.name[language]}
-                            </span>
-                        </div>
-                    </div>
-
-                    <div className={styles.pointsWrapper}>
-                        <span className={styles.points}>
-                            {student.points} PT
-                        </span>
-                    </div>
-
-                    <div className={styles.sectionWrapper}>
-                        <span className={styles.section}>
-                            {student.section}
-                        </span>
-                    </div>
-
-                    <div className={styles.gradeWrapper}>
-                        <span className={styles.grade}>
-                            {student.grade}
-                        </span>
-                    </div>
+                    <StudentInfo imageUrl={student.studentImage} name={student.name} />
+                    <Wrapper className={styles.pointsWrapper} value={student.points} />
+                    <Wrapper className={styles.sectionWrapper} value={student.section} />
+                    <Wrapper className={styles.gradeWrapper} value={student.grade} />
                 </div>
             ))}
         </div>
