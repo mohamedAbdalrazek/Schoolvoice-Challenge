@@ -1,4 +1,3 @@
-// RegularStudentsList.tsx
 import { getInitials } from "../../../utils/functions"
 import type { Student } from "../../../utils/types"
 import styles from "./StudentsList.module.scss"
