@@ -24,15 +24,18 @@ Create a `.env` file in the project root and add:
 
 ```env
 VITE_API_ENDPOINT=http://localhost:4000/
-
 ```
 ### Install Dependencies
 ```bash
-npm run dev
+   pnpm install
+   # or
+   npm install
 ```
-or
+### Run The Development Server
 ```bash
-pnpm dev
+   pnpm dev
+   # or
+   npm run dev
 ```
 The app will run on:
 
